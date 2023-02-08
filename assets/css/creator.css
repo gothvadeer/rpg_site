@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'CocoBiker';
+    src: url('../font/CocoBiker.ttf');
+}
+
+body {
+    background-color: black;
+}
+
+
+.card {
+    margin-top: 4em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 400px;
+    background: #4b0303;
+    overflow: hidden;
+}
+
+.card .imgBx,
+.card .details {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    transition: .5s;
+}
+
+.card .imgBx {
+    top: 0;
+    left: 0;
+}
+
+.card:hover .imgBx {
+    top: 0;
+    left: -100%;
+}
+
+.card .imgBx img {
+    width: 100%;
+}
+
+.card .details {
+    background: #4b0303;
+    top: 0;
+    left: 100%;
+    padding: 60px 30px;
+}
+
+.details a {
+    text-decoration: none;
+    color: goldenrod;
+}
+
+.card:hover .details {
+    top: 0;
+    left: 0%;
+}
+
+.card .details h2 {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 10px;
+    border-bottom: 2px solid #fff;
+    font-family: 'CocoBiker';
+
+}
+
+.card .details p {
+    margin: 20px 0 0;
+    color: #fff;
+}
+
+/* ===================== // RESPONSIVIDADE ======================== */
+
+@media only screen and (max-width: 370px) {
+    .card .details p {
+        font-size: 15px;
+    }
+
+    .card {
+        height: 450px;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+
+    .card .details p {
+        font-size: 15px;
+    }
+
+    .card {
+        height: 460px;
+    }
+}

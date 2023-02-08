@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'CocoBiker';
+    src: url('../font/CocoBiker.ttf');
+}
+
+body {
+    background-color: black;
+
+}
+
+.title h1 {
+    color: white;
+    font-size: 40px;
+    margin-top: 4em;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    font-family: 'CocoBiker';
+}
+
+
+@-webkit-keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@-webkit-keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.title p {
+    text-align: center;
+    color: gray;
+    font: bold 100% Consolas, Monaco, monospace;
+    border-right: .1em solid goldenrod;
+    width: 16.5em;
+    width: 21ch;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-animation: typing 4s steps(21, end),
+        blink-caret .5s step-end infinite alternate;
+}
+
+.butterfly {
+    width: 22px;
+    height: 20px;
+    margin-top: 2px;
+    vertical-align: middle;
+}
+
+/* ================================= CARDS ======================================*/
+
+.container-card {
+    max-width: 1000px;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    position: relative;
+    margin: 20px 0;
+    width: 300px;
+    height: 400px;
+    background: #4b0303;
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    transition: 1s;
+    box-shadow: inset 100px 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+    z-index: 1111;
+    transform: perspective(2000px) rotate(-10deg);
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.card .img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    transform-origin: left;
+    z-index: 1;
+    transition: 1s;
+}
+
+.card .img-container img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card:hover .img-container {
+    transform: rotateY(-135deg);
+}
+
+.card .card-details {
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    padding: 20px;
+    color: grey;
+}
+
+.card .card-details h2 {
+    margin: 0;
+    padding: 0.5em 0;
+    font-family: 'CocoBiker';
+    font-size: 2em;
+    color: white;
+}
+
+.card .card-details p {
+    margin: 0;
+    padding: 0;
+    line-height: 25px;
+    font-size: 1.1em;
+}
+
+.link {
+    color: goldenrod;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*=================================  // RESPONSIVE // ========================= */
+
+@media only screen and (max-width: 500px) {
+    .title h1 {
+        text-align: center;
+    }
+
+    .title p {
+        color: goldenrod;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .card {
+        height: 430px;
+        width: 380px;
+    }
+
+    .card .card-details p {
+        font-size: 14px;
+    }
+
+}
